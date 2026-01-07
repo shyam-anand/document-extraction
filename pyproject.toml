@@ -1,0 +1,22 @@
+[project]
+name = "docparsers"
+version = "0.1.0"
+description = "Document parsers for NewSpring Capital."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.3.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docparsers"]
+
+[project.scripts]
+excel = "docparsers.excelparser.main:main"
