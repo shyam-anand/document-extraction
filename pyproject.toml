@@ -1,5 +1,5 @@
 [project]
-name = "docparsers"
+name = "docextractors"
 version = "0.1.0"
 description = "Document parsers for NewSpring Capital."
 readme = "README.md"
@@ -22,9 +22,9 @@ build-backend = "hatchling.build"
 package = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/docparsers"]
+packages = ["src/docextractors"]
 
 [project.scripts]
-cli = "docparsers.cli:cli"
-excel = "docparsers.excelparser.main:main"
-pdf = "docparsers.pdfparser.main:main"
+cli = "docextractors.cli:cli"
+excel = "docextractors.excelparser.main:main"
+pdf = "docextractors.pdfparser.main:main"
