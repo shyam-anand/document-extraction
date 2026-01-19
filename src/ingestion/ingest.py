@@ -1,10 +1,10 @@
-from pathlib import Path
 import click
 import shutil
 import uuid
 
 from extractors import loggingconfig
 from ingestion.bronze import bronze
+from pathlib import Path
 
 logger = loggingconfig.get_logger(__name__)
 
@@ -23,3 +23,10 @@ def ingest_file(source_file: str):
     # Write metadata
     logger.info(f"Writing metadata {source_path.name=} {source_path.suffix=}")
     bronze.write(document_id, source_path.name, source_path.suffix)
+
+
+if __name__ == "__main__":
+    import sys
+
+    source = sys.argv[1]
+    ingest_file(source)
